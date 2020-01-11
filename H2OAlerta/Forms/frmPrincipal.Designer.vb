@@ -39,8 +39,9 @@ Partial Class frmPrincipal
         Me.chkIniciarAuto = New System.Windows.Forms.CheckBox()
         Me.chkAlertaSonoro = New System.Windows.Forms.CheckBox()
         Me.btnNotificacaoPropria = New System.Windows.Forms.Button()
-        Me.ContextMenuStrip1.SuspendLayout
-        Me.SuspendLayout
+        Me.chkAnimacao = New System.Windows.Forms.CheckBox()
+        Me.ContextMenuStrip1.SuspendLayout()
+        Me.SuspendLayout()
         '
         'Timer1
         '
@@ -48,9 +49,9 @@ Partial Class frmPrincipal
         'NotifyIcon1
         '
         Me.NotifyIcon1.ContextMenuStrip = Me.ContextMenuStrip1
-        Me.NotifyIcon1.Icon = CType(resources.GetObject("NotifyIcon1.Icon"),System.Drawing.Icon)
+        Me.NotifyIcon1.Icon = CType(resources.GetObject("NotifyIcon1.Icon"), System.Drawing.Icon)
         Me.NotifyIcon1.Text = "H2O Alerta"
-        Me.NotifyIcon1.Visible = true
+        Me.NotifyIcon1.Visible = True
         '
         'ContextMenuStrip1
         '
@@ -77,12 +78,12 @@ Partial Class frmPrincipal
         '
         'btnExibiNotificacao
         '
-        Me.btnExibiNotificacao.Location = New System.Drawing.Point(14, 103)
+        Me.btnExibiNotificacao.Location = New System.Drawing.Point(9, 144)
         Me.btnExibiNotificacao.Name = "btnExibiNotificacao"
         Me.btnExibiNotificacao.Size = New System.Drawing.Size(101, 23)
         Me.btnExibiNotificacao.TabIndex = 1
         Me.btnExibiNotificacao.Text = "Exibi Notificação"
-        Me.btnExibiNotificacao.UseVisualStyleBackColor = true
+        Me.btnExibiNotificacao.UseVisualStyleBackColor = True
         '
         'btnSair
         '
@@ -91,11 +92,11 @@ Partial Class frmPrincipal
         Me.btnSair.Size = New System.Drawing.Size(75, 23)
         Me.btnSair.TabIndex = 2
         Me.btnSair.Text = "Sair"
-        Me.btnSair.UseVisualStyleBackColor = true
+        Me.btnSair.UseVisualStyleBackColor = True
         '
         'Label1
         '
-        Me.Label1.AutoSize = true
+        Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(12, 21)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(144, 13)
@@ -104,7 +105,7 @@ Partial Class frmPrincipal
         '
         'Label2
         '
-        Me.Label2.AutoSize = true
+        Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(195, 21)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(43, 13)
@@ -126,44 +127,55 @@ Partial Class frmPrincipal
         Me.btnSobre.Size = New System.Drawing.Size(75, 23)
         Me.btnSobre.TabIndex = 7
         Me.btnSobre.Text = "Sobre"
-        Me.btnSobre.UseVisualStyleBackColor = true
+        Me.btnSobre.UseVisualStyleBackColor = True
         '
         'chkIniciarAuto
         '
-        Me.chkIniciarAuto.AutoSize = true
+        Me.chkIniciarAuto.AutoSize = True
         Me.chkIniciarAuto.Location = New System.Drawing.Point(15, 46)
         Me.chkIniciarAuto.Name = "chkIniciarAuto"
         Me.chkIniciarAuto.Size = New System.Drawing.Size(214, 17)
         Me.chkIniciarAuto.TabIndex = 8
         Me.chkIniciarAuto.Text = "Iniciar automaticamente com o windows"
-        Me.chkIniciarAuto.UseVisualStyleBackColor = true
+        Me.chkIniciarAuto.UseVisualStyleBackColor = True
         '
         'chkAlertaSonoro
         '
-        Me.chkAlertaSonoro.AutoSize = true
+        Me.chkAlertaSonoro.AutoSize = True
         Me.chkAlertaSonoro.Location = New System.Drawing.Point(15, 69)
         Me.chkAlertaSonoro.Name = "chkAlertaSonoro"
-        Me.chkAlertaSonoro.Size = New System.Drawing.Size(264, 17)
+        Me.chkAlertaSonoro.Size = New System.Drawing.Size(261, 17)
         Me.chkAlertaSonoro.TabIndex = 9
-        Me.chkAlertaSonoro.Text = "Executar alerta sonoro. (Água derramada no copo)"
-        Me.chkAlertaSonoro.UseVisualStyleBackColor = true
+        Me.chkAlertaSonoro.Text = "Executar alerta sonoro (Água derramada no copo)"
+        Me.chkAlertaSonoro.UseVisualStyleBackColor = True
         '
         'btnNotificacaoPropria
         '
-        Me.btnNotificacaoPropria.Location = New System.Drawing.Point(121, 103)
+        Me.btnNotificacaoPropria.Location = New System.Drawing.Point(116, 144)
         Me.btnNotificacaoPropria.Name = "btnNotificacaoPropria"
         Me.btnNotificacaoPropria.Size = New System.Drawing.Size(142, 23)
         Me.btnNotificacaoPropria.TabIndex = 10
         Me.btnNotificacaoPropria.Text = "Notificação Personalizada"
-        Me.btnNotificacaoPropria.UseVisualStyleBackColor = true
+        Me.btnNotificacaoPropria.UseVisualStyleBackColor = True
+        '
+        'chkAnimacao
+        '
+        Me.chkAnimacao.AutoSize = True
+        Me.chkAnimacao.Location = New System.Drawing.Point(15, 92)
+        Me.chkAnimacao.Name = "chkAnimacao"
+        Me.chkAnimacao.Size = New System.Drawing.Size(117, 17)
+        Me.chkAnimacao.TabIndex = 11
+        Me.chkAnimacao.Text = "Executar animação"
+        Me.chkAnimacao.UseVisualStyleBackColor = True
         '
         'frmPrincipal
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.ClientSize = New System.Drawing.Size(472, 138)
-        Me.ControlBox = false
+        Me.ClientSize = New System.Drawing.Size(472, 179)
+        Me.ControlBox = False
+        Me.Controls.Add(Me.chkAnimacao)
         Me.Controls.Add(Me.btnNotificacaoPropria)
         Me.Controls.Add(Me.chkAlertaSonoro)
         Me.Controls.Add(Me.chkIniciarAuto)
@@ -197,4 +209,5 @@ End Sub
     Friend WithEvents chkIniciarAuto As CheckBox
     Friend WithEvents chkAlertaSonoro As CheckBox
     Friend WithEvents btnNotificacaoPropria As Button
+    Friend WithEvents chkAnimacao As CheckBox
 End Class

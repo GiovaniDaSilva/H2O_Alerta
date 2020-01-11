@@ -40,8 +40,9 @@ Public Class frmPrincipal
     Private Sub subCarregaParametros()
         Dim locParametros As clsParametrosIni = New clsIni().funCarregaIni
         chkAlertaSonoro.Checked = locParametros.AlertaSonoro
-        chkIniciarAuto.Checked = clsRegistro.subExisteRegistroAplicacao()        
-        txtMinuto.Text = iif(locParametros.Timer > 0 , locParametros.Timer , 15)
+        chkIniciarAuto.Checked = clsRegistro.subExisteRegistroAplicacao()
+        txtMinuto.Text = IIf(locParametros.Timer > 0, locParametros.Timer, 15)
+        chkAnimacao.Checked = locParametros.Animacao
     End Sub
 
     Private Sub subExibiParametros(ByVal parValor As Boolean, Optional parGravaIni As Boolean = false)
@@ -99,13 +100,14 @@ Public Class frmPrincipal
         dim ini As new clsIni
         Dim parametros As New clsParametrosIni 
 
-        parametros.AlertaSonoro = chkAlertaSonoro.Checked 
-        parametros.Timer = Val(txtMinuto.text)
+        parametros.AlertaSonoro = chkAlertaSonoro.Checked
+        parametros.Timer = Val(txtMinuto.Text)
+        parametros.Animacao = chkAnimacao.Checked
         ini.gravaArquivoini(parametros)
     End sub
 
     Private Sub btnNotificacaoPropria_Click(sender As Object, e As EventArgs) Handles btnNotificacaoPropria.Click
-        clsNotificacaoPersonalizada.subExecutaNotificacaoPersonalizada(chkAlertaSonoro.Checked)
+        clsNotificacaoPersonalizada.subExecutaNotificacaoPersonalizada(chkAlertaSonoro.Checked, chkAnimacao.Checked)
     End Sub
 End Class
 

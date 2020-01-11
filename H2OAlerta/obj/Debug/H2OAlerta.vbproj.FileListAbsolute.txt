@@ -23,3 +23,17 @@ C:\Giovani\Diversos\Giovani\H2O Alerta\H2OAlerta\H2OAlerta\obj\Debug\H2OAlerta.p
 C:\Giovani\Diversos\Giovani\H2O Alerta\H2OAlerta\H2OAlerta\bin\Debug\H2OAlerta.pdb
 C:\Giovani\Diversos\Giovani\H2O Alerta\H2OAlerta\H2OAlerta\bin\Debug\H2OAlerta.xml
 C:\Giovani\Diversos\Giovani\H2O Alerta\H2OAlerta\H2OAlerta\obj\Debug\H2OAlerta.frmNotificacao.resources
+C:\Projeto\H2O_Alerta\H2OAlerta\bin\Debug\H2OAlerta.exe.config
+C:\Projeto\H2O_Alerta\H2OAlerta\bin\Debug\H2OAlerta.exe
+C:\Projeto\H2O_Alerta\H2OAlerta\bin\Debug\H2OAlerta.pdb
+C:\Projeto\H2O_Alerta\H2OAlerta\bin\Debug\H2OAlerta.xml
+C:\Projeto\H2O_Alerta\H2OAlerta\bin\Debug\Tulpep.NotificationWindow.dll
+C:\Projeto\H2O_Alerta\H2OAlerta\obj\Debug\H2OAlerta.vbprojAssemblyReference.cache
+C:\Projeto\H2O_Alerta\H2OAlerta\obj\Debug\H2OAlerta.frmNotificacao.resources
+C:\Projeto\H2O_Alerta\H2OAlerta\obj\Debug\H2OAlerta.frmPrincipal.resources
+C:\Projeto\H2O_Alerta\H2OAlerta\obj\Debug\H2OAlerta.Resources.resources
+C:\Projeto\H2O_Alerta\H2OAlerta\obj\Debug\H2OAlerta.vbproj.GenerateResource.cache
+C:\Projeto\H2O_Alerta\H2OAlerta\obj\Debug\H2OAlerta.vbproj.CopyComplete
+C:\Projeto\H2O_Alerta\H2OAlerta\obj\Debug\H2OAlerta.exe
+C:\Projeto\H2O_Alerta\H2OAlerta\obj\Debug\H2OAlerta.xml
+C:\Projeto\H2O_Alerta\H2OAlerta\obj\Debug\H2OAlerta.pdb
