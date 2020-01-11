@@ -40,7 +40,11 @@ Partial Class frmPrincipal
         Me.chkAlertaSonoro = New System.Windows.Forms.CheckBox()
         Me.btnNotificacaoPropria = New System.Windows.Forms.Button()
         Me.chkAnimacao = New System.Windows.Forms.CheckBox()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.rbWindows = New System.Windows.Forms.RadioButton()
+        Me.rbPersonalizado = New System.Windows.Forms.RadioButton()
         Me.ContextMenuStrip1.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Timer1
@@ -78,7 +82,7 @@ Partial Class frmPrincipal
         '
         'btnExibiNotificacao
         '
-        Me.btnExibiNotificacao.Location = New System.Drawing.Point(9, 144)
+        Me.btnExibiNotificacao.Location = New System.Drawing.Point(6, 208)
         Me.btnExibiNotificacao.Name = "btnExibiNotificacao"
         Me.btnExibiNotificacao.Size = New System.Drawing.Size(101, 23)
         Me.btnExibiNotificacao.TabIndex = 1
@@ -87,7 +91,7 @@ Partial Class frmPrincipal
         '
         'btnSair
         '
-        Me.btnSair.Location = New System.Drawing.Point(385, 103)
+        Me.btnSair.Location = New System.Drawing.Point(385, 208)
         Me.btnSair.Name = "btnSair"
         Me.btnSair.Size = New System.Drawing.Size(75, 23)
         Me.btnSair.TabIndex = 2
@@ -132,7 +136,7 @@ Partial Class frmPrincipal
         'chkIniciarAuto
         '
         Me.chkIniciarAuto.AutoSize = True
-        Me.chkIniciarAuto.Location = New System.Drawing.Point(15, 46)
+        Me.chkIniciarAuto.Location = New System.Drawing.Point(15, 147)
         Me.chkIniciarAuto.Name = "chkIniciarAuto"
         Me.chkIniciarAuto.Size = New System.Drawing.Size(214, 17)
         Me.chkIniciarAuto.TabIndex = 8
@@ -142,7 +146,7 @@ Partial Class frmPrincipal
         'chkAlertaSonoro
         '
         Me.chkAlertaSonoro.AutoSize = True
-        Me.chkAlertaSonoro.Location = New System.Drawing.Point(15, 69)
+        Me.chkAlertaSonoro.Location = New System.Drawing.Point(15, 101)
         Me.chkAlertaSonoro.Name = "chkAlertaSonoro"
         Me.chkAlertaSonoro.Size = New System.Drawing.Size(261, 17)
         Me.chkAlertaSonoro.TabIndex = 9
@@ -151,7 +155,7 @@ Partial Class frmPrincipal
         '
         'btnNotificacaoPropria
         '
-        Me.btnNotificacaoPropria.Location = New System.Drawing.Point(116, 144)
+        Me.btnNotificacaoPropria.Location = New System.Drawing.Point(113, 208)
         Me.btnNotificacaoPropria.Name = "btnNotificacaoPropria"
         Me.btnNotificacaoPropria.Size = New System.Drawing.Size(142, 23)
         Me.btnNotificacaoPropria.TabIndex = 10
@@ -161,20 +165,54 @@ Partial Class frmPrincipal
         'chkAnimacao
         '
         Me.chkAnimacao.AutoSize = True
-        Me.chkAnimacao.Location = New System.Drawing.Point(15, 92)
+        Me.chkAnimacao.Location = New System.Drawing.Point(15, 124)
         Me.chkAnimacao.Name = "chkAnimacao"
         Me.chkAnimacao.Size = New System.Drawing.Size(117, 17)
         Me.chkAnimacao.TabIndex = 11
         Me.chkAnimacao.Text = "Executar animação"
         Me.chkAnimacao.UseVisualStyleBackColor = True
         '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.rbPersonalizado)
+        Me.GroupBox1.Controls.Add(Me.rbWindows)
+        Me.GroupBox1.Location = New System.Drawing.Point(15, 44)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(261, 51)
+        Me.GroupBox1.TabIndex = 12
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Estilo"
+        '
+        'rbWindows
+        '
+        Me.rbWindows.AutoSize = True
+        Me.rbWindows.Location = New System.Drawing.Point(27, 19)
+        Me.rbWindows.Name = "rbWindows"
+        Me.rbWindows.Size = New System.Drawing.Size(69, 17)
+        Me.rbWindows.TabIndex = 14
+        Me.rbWindows.Text = "Windows"
+        Me.rbWindows.UseVisualStyleBackColor = True
+        '
+        'rbPersonalizado
+        '
+        Me.rbPersonalizado.AutoSize = True
+        Me.rbPersonalizado.Checked = True
+        Me.rbPersonalizado.Location = New System.Drawing.Point(124, 19)
+        Me.rbPersonalizado.Name = "rbPersonalizado"
+        Me.rbPersonalizado.Size = New System.Drawing.Size(91, 17)
+        Me.rbPersonalizado.TabIndex = 15
+        Me.rbPersonalizado.TabStop = True
+        Me.rbPersonalizado.Text = "Personalizado"
+        Me.rbPersonalizado.UseVisualStyleBackColor = True
+        '
         'frmPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.ClientSize = New System.Drawing.Size(472, 179)
+        Me.ClientSize = New System.Drawing.Size(472, 243)
         Me.ControlBox = False
+        Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.chkAnimacao)
         Me.Controls.Add(Me.btnNotificacaoPropria)
         Me.Controls.Add(Me.chkAlertaSonoro)
@@ -185,11 +223,13 @@ Partial Class frmPrincipal
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btnSair)
         Me.Controls.Add(Me.btnExibiNotificacao)
-        Me.Icon = CType(resources.GetObject("$this.Icon"),System.Drawing.Icon)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmPrincipal"
         Me.Text = "H2O Alerta"
-        Me.ContextMenuStrip1.ResumeLayout(false)
-        Me.ResumeLayout(false)
+        Me.ContextMenuStrip1.ResumeLayout(False)
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
+        Me.ResumeLayout(False)
         Me.PerformLayout
 
 End Sub
@@ -210,4 +250,7 @@ End Sub
     Friend WithEvents chkAlertaSonoro As CheckBox
     Friend WithEvents btnNotificacaoPropria As Button
     Friend WithEvents chkAnimacao As CheckBox
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents rbPersonalizado As RadioButton
+    Friend WithEvents rbWindows As RadioButton
 End Class

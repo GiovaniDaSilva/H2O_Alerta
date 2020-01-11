@@ -43,6 +43,10 @@ Public Class frmPrincipal
         chkIniciarAuto.Checked = clsRegistro.subExisteRegistroAplicacao()
         txtMinuto.Text = IIf(locParametros.Timer > 0, locParametros.Timer, 15)
         chkAnimacao.Checked = locParametros.Animacao
+        rbPersonalizado.Checked = IIf(locParametros.Estilo = "P", True, False)
+        rbWindows.Checked = IIf(locParametros.Estilo = "W", True, False)
+
+        subHabiliaCampos(rbPersonalizado.Checked)
     End Sub
 
     Private Sub subExibiParametros(ByVal parValor As Boolean, Optional parGravaIni As Boolean = false)
@@ -103,11 +107,29 @@ Public Class frmPrincipal
         parametros.AlertaSonoro = chkAlertaSonoro.Checked
         parametros.Timer = Val(txtMinuto.Text)
         parametros.Animacao = chkAnimacao.Checked
+        parametros.Estilo = IIf(rbPersonalizado.Checked, "P", "W")
         ini.gravaArquivoini(parametros)
     End sub
 
     Private Sub btnNotificacaoPropria_Click(sender As Object, e As EventArgs) Handles btnNotificacaoPropria.Click
         clsNotificacaoPersonalizada.subExecutaNotificacaoPersonalizada(chkAlertaSonoro.Checked, chkAnimacao.Checked)
+    End Sub
+
+    Private Sub rbPersonalizado_CheckedChanged(sender As Object, e As EventArgs) Handles rbPersonalizado.CheckedChanged
+        subHabiliaCampos(rbPersonalizado.Checked)
+    End Sub
+
+    Private Sub subHabiliaCampos(pAcao As Boolean)
+        chkAnimacao.Enabled = pAcao
+
+        If pAcao = False Then
+            chkAnimacao.Checked = False
+        End If
+
+    End Sub
+
+    Private Sub rbWindows_CheckedChanged(sender As Object, e As EventArgs) Handles rbWindows.CheckedChanged
+        subHabiliaCampos(rbPersonalizado.Checked)
     End Sub
 End Class
 
