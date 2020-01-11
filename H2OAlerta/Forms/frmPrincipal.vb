@@ -5,8 +5,15 @@ imports Microsoft.VisualBasic.Devices
 
 Public Class frmPrincipal
 
+    Private glfParametros As clsParametrosIni
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnExibiNotificacao.Click
-        ExibeAlerta()
+
+        If rbPersonalizado.Checked Then
+            clsNotificacaoPersonalizada.subExecutaNotificacaoPersonalizada(glfParametros)
+        Else
+            ExibeAlerta()
+        End If
+
     End Sub
 
     Private Sub ExibeAlerta()
@@ -38,18 +45,25 @@ Public Class frmPrincipal
     End Sub
 
     Private Sub subCarregaParametros()
-        Dim locParametros As clsParametrosIni = New clsIni().funCarregaIni
-        chkAlertaSonoro.Checked = locParametros.AlertaSonoro
-        chkIniciarAuto.Checked = clsRegistro.subExisteRegistroAplicacao()
-        txtMinuto.Text = IIf(locParametros.Timer > 0, locParametros.Timer, 15)
-        chkAnimacao.Checked = locParametros.Animacao
-        rbPersonalizado.Checked = IIf(locParametros.Estilo = "P", True, False)
-        rbWindows.Checked = IIf(locParametros.Estilo = "W", True, False)
 
+        glfParametros = New clsIni().funCarregaIni
+        chkAlertaSonoro.Checked = glfParametros.AlertaSonoro
+        chkIniciarAuto.Checked = clsRegistro.subExisteRegistroAplicacao()
+        txtMinuto.Text = IIf(glfParametros.Timer > 0, glfParametros.Timer, 15)
+        chkAnimacao.Checked = glfParametros.Animacao
+        rbPersonalizado.Checked = IIf(glfParametros.Estilo = "P", True, False)
+        rbWindows.Checked = IIf(glfParametros.Estilo = "W", True, False)
+        txtOpacidade.Text = glfParametros.Opacidade
         subHabiliaCampos(rbPersonalizado.Checked)
     End Sub
 
     Private Sub subExibiParametros(ByVal parValor As Boolean, Optional parGravaIni As Boolean = false)
+
+        If parGravaIni Then
+            If Not funGravar() Then Exit Sub
+        End If
+
+
         If parValor Then
             Me.ShowIcon = True
             Me.ShowInTaskbar = True
@@ -62,7 +76,7 @@ Public Class frmPrincipal
             Me.Hide()                    
         End If
 
-        If parGravaIni Then subGravar 
+
     End Sub
 
     Private Sub btnSair_Click(sender As Object, e As EventArgs) Handles btnSair.Click
@@ -99,21 +113,27 @@ Public Class frmPrincipal
         End If 
     End Sub
 
-    
-    Private sub subGravar()
-        dim ini As new clsIni
-        Dim parametros As New clsParametrosIni 
 
-        parametros.AlertaSonoro = chkAlertaSonoro.Checked
-        parametros.Timer = Val(txtMinuto.Text)
-        parametros.Animacao = chkAnimacao.Checked
-        parametros.Estilo = IIf(rbPersonalizado.Checked, "P", "W")
-        ini.gravaArquivoini(parametros)
-    End sub
+    Private Function funGravar() As Boolean
+        Dim ini As New clsIni
 
-    Private Sub btnNotificacaoPropria_Click(sender As Object, e As EventArgs) Handles btnNotificacaoPropria.Click
-        clsNotificacaoPersonalizada.subExecutaNotificacaoPersonalizada(chkAlertaSonoro.Checked, chkAnimacao.Checked)
-    End Sub
+        If Not funValidaOpacidade(Val(txtOpacidade.Text)) Then
+            txtOpacidade.Focus()
+            txtOpacidade.Text = glfParametros.Opacidade
+            Return False
+        End If
+
+
+        glfParametros.AlertaSonoro = chkAlertaSonoro.Checked
+        glfParametros.Timer = Val(txtMinuto.Text)
+        glfParametros.Animacao = chkAnimacao.Checked
+        glfParametros.Estilo = IIf(rbPersonalizado.Checked, "P", "W")
+        glfParametros.Opacidade = Val(txtOpacidade.Text)
+        ini.gravaArquivoini(glfParametros)
+        Return True
+    End Function
+
+
 
     Private Sub rbPersonalizado_CheckedChanged(sender As Object, e As EventArgs) Handles rbPersonalizado.CheckedChanged
         subHabiliaCampos(rbPersonalizado.Checked)
@@ -121,15 +141,54 @@ Public Class frmPrincipal
 
     Private Sub subHabiliaCampos(pAcao As Boolean)
         chkAnimacao.Enabled = pAcao
+        txtOpacidade.Enabled = pAcao
 
         If pAcao = False Then
             chkAnimacao.Checked = False
+            txtOpacidade.Text = ""
         End If
 
     End Sub
 
     Private Sub rbWindows_CheckedChanged(sender As Object, e As EventArgs) Handles rbWindows.CheckedChanged
         subHabiliaCampos(rbPersonalizado.Checked)
+    End Sub
+
+    Private Sub txtOpacidade_Leave(sender As Object, e As EventArgs) Handles txtOpacidade.Leave
+        If Not funValidaOpacidade(Val(txtOpacidade.Text)) Then
+            txtOpacidade.Focus()
+            txtOpacidade.Text = glfParametros.Opacidade
+        End If
+
+        glfParametros.Opacidade = Val(txtOpacidade.Text)
+    End Sub
+
+    Private Function funValidaOpacidade(parValor As Integer) As Boolean
+        Dim locValido As Boolean = True
+
+        If rbWindows.Checked Then Return True
+
+        If parValor < 1 Then
+            locValido = False
+        End If
+
+        If parValor > 100 Then
+            locValido = False
+        End If
+
+        If Not locValido Then
+            MsgBox("Valor inválido. Digite um valor entre 1 e 100.")
+        End If
+
+        Return locValido
+    End Function
+
+    Private Sub chkAnimacao_Leave(sender As Object, e As EventArgs) Handles chkAnimacao.Leave
+        glfParametros.Animacao = chkAnimacao.Checked
+    End Sub
+
+    Private Sub chkAlertaSonoro_Leave(sender As Object, e As EventArgs) Handles chkAlertaSonoro.Leave
+        glfParametros.AlertaSonoro = chkAlertaSonoro.Checked
     End Sub
 End Class
 

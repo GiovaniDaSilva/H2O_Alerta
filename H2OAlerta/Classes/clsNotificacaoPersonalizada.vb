@@ -1,15 +1,17 @@
 ﻿Imports System.Threading
 
 Public Class clsNotificacaoPersonalizada
-    Public Shared Sub subExecutaNotificacaoPersonalizada(Optional ByVal parAlertaSonoro As Boolean = False, Optional ByVal parAnimacao As Boolean = True)
+    Public Shared Sub subExecutaNotificacaoPersonalizada(parParametros As clsParametrosIni)
 
         Dim locForm As New frmNotificacao
 
-        If parAlertaSonoro Then
+        If parParametros.AlertaSonoro Then
             clsAlertaSonoro.subExecutaAlerta()
         End If
 
-        subChamaFormulario(locForm, parAnimacao)
+        locForm.Opacity = (parParametros.Opacidade / 100)
+
+        subChamaFormulario(locForm, parParametros.Animacao)
 
     End Sub
 

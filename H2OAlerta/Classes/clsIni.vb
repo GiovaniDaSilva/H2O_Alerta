@@ -24,6 +24,7 @@ Private Declare Auto Function WritePrivateProfileString Lib "Kernel32" ( ByVal l
         locParametros.Timer = LeArquivoINI(nome_arquivo_ini, "Geral", "Timer", 15)
         locParametros.Animacao = LeArquivoINI(nome_arquivo_ini, "Geral", "Animacao", "true")
         locParametros.Estilo = LeArquivoINI(nome_arquivo_ini, "Geral", "Estilo", "P")
+        locParametros.Opacidade = LeArquivoINI(nome_arquivo_ini, "Geral", "Opacidade", 100)
         Return locParametros 
     End function
 
@@ -44,6 +45,7 @@ Private Declare Auto Function WritePrivateProfileString Lib "Kernel32" ( ByVal l
         WritePrivateProfileString("Geral", "Timer", parParametros.Timer, nome_arquivo_ini)
         WritePrivateProfileString("Geral", "Animacao", parParametros.Animacao, nome_arquivo_ini)
         WritePrivateProfileString("Geral", "Estilo", parParametros.Estilo, nome_arquivo_ini)
+        WritePrivateProfileString("Geral", "Opacidade", parParametros.Opacidade, nome_arquivo_ini)
     End Sub
 
     ' Retorna o nome do arquivo INI

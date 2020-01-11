@@ -2,7 +2,7 @@
     Private Sub frmNotificacao_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Timer1.Interval = 5000
         Timer1.Start
-
+        textBox.Clear()
         RichAddLineFmt(textBox, "<b>Lembre-se de beber água.</b>")
         
 

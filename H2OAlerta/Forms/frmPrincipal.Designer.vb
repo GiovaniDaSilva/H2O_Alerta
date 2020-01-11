@@ -38,11 +38,13 @@ Partial Class frmPrincipal
         Me.btnSobre = New System.Windows.Forms.Button()
         Me.chkIniciarAuto = New System.Windows.Forms.CheckBox()
         Me.chkAlertaSonoro = New System.Windows.Forms.CheckBox()
-        Me.btnNotificacaoPropria = New System.Windows.Forms.Button()
         Me.chkAnimacao = New System.Windows.Forms.CheckBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.rbWindows = New System.Windows.Forms.RadioButton()
         Me.rbPersonalizado = New System.Windows.Forms.RadioButton()
+        Me.rbWindows = New System.Windows.Forms.RadioButton()
+        Me.txtOpacidade = New System.Windows.Forms.MaskedTextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.ContextMenuStrip1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -153,15 +155,6 @@ Partial Class frmPrincipal
         Me.chkAlertaSonoro.Text = "Executar alerta sonoro (Água derramada no copo)"
         Me.chkAlertaSonoro.UseVisualStyleBackColor = True
         '
-        'btnNotificacaoPropria
-        '
-        Me.btnNotificacaoPropria.Location = New System.Drawing.Point(113, 208)
-        Me.btnNotificacaoPropria.Name = "btnNotificacaoPropria"
-        Me.btnNotificacaoPropria.Size = New System.Drawing.Size(142, 23)
-        Me.btnNotificacaoPropria.TabIndex = 10
-        Me.btnNotificacaoPropria.Text = "Notificação Personalizada"
-        Me.btnNotificacaoPropria.UseVisualStyleBackColor = True
-        '
         'chkAnimacao
         '
         Me.chkAnimacao.AutoSize = True
@@ -183,16 +176,6 @@ Partial Class frmPrincipal
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Estilo"
         '
-        'rbWindows
-        '
-        Me.rbWindows.AutoSize = True
-        Me.rbWindows.Location = New System.Drawing.Point(27, 19)
-        Me.rbWindows.Name = "rbWindows"
-        Me.rbWindows.Size = New System.Drawing.Size(69, 17)
-        Me.rbWindows.TabIndex = 14
-        Me.rbWindows.Text = "Windows"
-        Me.rbWindows.UseVisualStyleBackColor = True
-        '
         'rbPersonalizado
         '
         Me.rbPersonalizado.AutoSize = True
@@ -205,6 +188,42 @@ Partial Class frmPrincipal
         Me.rbPersonalizado.Text = "Personalizado"
         Me.rbPersonalizado.UseVisualStyleBackColor = True
         '
+        'rbWindows
+        '
+        Me.rbWindows.AutoSize = True
+        Me.rbWindows.Location = New System.Drawing.Point(27, 19)
+        Me.rbWindows.Name = "rbWindows"
+        Me.rbWindows.Size = New System.Drawing.Size(69, 17)
+        Me.rbWindows.TabIndex = 14
+        Me.rbWindows.Text = "Windows"
+        Me.rbWindows.UseVisualStyleBackColor = True
+        '
+        'txtOpacidade
+        '
+        Me.txtOpacidade.Location = New System.Drawing.Point(80, 170)
+        Me.txtOpacidade.Mask = "999"
+        Me.txtOpacidade.Name = "txtOpacidade"
+        Me.txtOpacidade.Size = New System.Drawing.Size(27, 20)
+        Me.txtOpacidade.TabIndex = 15
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(113, 173)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(15, 13)
+        Me.Label3.TabIndex = 14
+        Me.Label3.Text = "%"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(12, 173)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(62, 13)
+        Me.Label4.TabIndex = 13
+        Me.Label4.Text = "Opacidade:"
+        '
         'frmPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -212,9 +231,11 @@ Partial Class frmPrincipal
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.ClientSize = New System.Drawing.Size(472, 243)
         Me.ControlBox = False
+        Me.Controls.Add(Me.txtOpacidade)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.chkAnimacao)
-        Me.Controls.Add(Me.btnNotificacaoPropria)
         Me.Controls.Add(Me.chkAlertaSonoro)
         Me.Controls.Add(Me.chkIniciarAuto)
         Me.Controls.Add(Me.btnSobre)
@@ -248,9 +269,11 @@ End Sub
     Friend WithEvents btnSobre As Button
     Friend WithEvents chkIniciarAuto As CheckBox
     Friend WithEvents chkAlertaSonoro As CheckBox
-    Friend WithEvents btnNotificacaoPropria As Button
     Friend WithEvents chkAnimacao As CheckBox
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents rbPersonalizado As RadioButton
     Friend WithEvents rbWindows As RadioButton
+    Friend WithEvents txtOpacidade As MaskedTextBox
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label4 As Label
 End Class
