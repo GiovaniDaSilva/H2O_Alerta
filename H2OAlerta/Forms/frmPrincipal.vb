@@ -7,19 +7,17 @@ Public Class frmPrincipal
 
     Private glfParametros As clsParametrosIni
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnExibiNotificacao.Click
+        ExibeAlerta()
+    End Sub
+
+    Private Sub ExibeAlerta()
 
         If rbPersonalizado.Checked Then
             clsNotificacaoPersonalizada.subExecutaNotificacaoPersonalizada(glfParametros)
         Else
-            ExibeAlerta()
+            clsAlerta.subExibiNotificacao(NotifyIcon1, chkAlertaSonoro.Checked)
         End If
 
-    End Sub
-
-    Private Sub ExibeAlerta()
-        Dim locAlerta As New clsAlerta
-        locAlerta.subExibiNotificacao(NotifyIcon1, chkAlertaSonoro.Checked )
-        locAlerta = Nothing
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
@@ -35,13 +33,8 @@ Public Class frmPrincipal
 
         subExibiParametros(False)
 
-        Dim locAlerta As New clsAlerta
-        Try
-            locAlerta.subExibiNotificacao(NotifyIcon1, "Água", "Água Alerta Iniciado..")
-        Finally 
-            locAlerta = Nothing
-        End Try
-                   
+        clsAlerta.subExibiNotificacao(NotifyIcon1, "Água", "Água Alerta Iniciado..")
+
     End Sub
 
     Private Sub subCarregaParametros()
