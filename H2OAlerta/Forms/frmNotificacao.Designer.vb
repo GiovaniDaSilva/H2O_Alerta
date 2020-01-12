@@ -64,7 +64,7 @@ Partial Class frmNotificacao
         Me.textBox.BackColor = System.Drawing.SystemColors.Window
         Me.textBox.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.textBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.textBox.ForeColor = System.Drawing.SystemColors.InfoText
+        Me.textBox.ForeColor = System.Drawing.SystemColors.MenuHighlight
         Me.textBox.Location = New System.Drawing.Point(150, 33)
         Me.textBox.Name = "textBox"
         Me.textBox.ReadOnly = True
@@ -77,7 +77,7 @@ Partial Class frmNotificacao
         '
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.SystemColors.Window
-        Me.Label2.ForeColor = System.Drawing.SystemColors.InfoText
+        Me.Label2.ForeColor = System.Drawing.SystemColors.MenuHighlight
         Me.Label2.Location = New System.Drawing.Point(12, 9)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(59, 13)
@@ -89,7 +89,7 @@ Partial Class frmNotificacao
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.BackColor = System.Drawing.SystemColors.WindowText
+        Me.BackColor = System.Drawing.SystemColors.Window
         Me.ClientSize = New System.Drawing.Size(451, 125)
         Me.ControlBox = False
         Me.Controls.Add(Me.Panel1)

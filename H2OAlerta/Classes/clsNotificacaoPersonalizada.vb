@@ -1,7 +1,11 @@
 ﻿Imports System.Threading
 
 Public Class clsNotificacaoPersonalizada
-    Public Shared Sub subExecutaNotificacaoPersonalizada(parParametros As clsParametrosIni)
+
+    Const BEBER_AGUA = "Lembre-se de beber água."
+    Private Shared glfMensagem As String
+
+    Public Shared Sub subExecutaNotificacaoPersonalizada(parParametros As clsParametrosIni, Optional ByVal parMensagem As String = BEBER_AGUA)
 
         Dim locForm As New frmNotificacao
 
@@ -10,6 +14,7 @@ Public Class clsNotificacaoPersonalizada
         End If
 
         locForm.Opacity = (parParametros.Opacidade / 100)
+        glfMensagem = parMensagem
 
         subChamaFormulario(locForm, parParametros.Animacao)
 
@@ -29,7 +34,7 @@ Public Class clsNotificacaoPersonalizada
         '25 para deixar uma pequena distancia        
         pForm.Left = (Screen.GetWorkingArea(pForm).Width - pForm.Width) - 25
         pForm.Top = Screen.GetWorkingArea(pForm).Height - pForm.Height - 25
-        pForm.Show()
+        pForm.ChamaForulario(glfMensagem)
     End Sub
 
     Private Shared Sub subChamaFormularioComANimacao(ByRef pForm As frmNotificacao)
@@ -39,7 +44,7 @@ Public Class clsNotificacaoPersonalizada
 
         pForm.Left = (Screen.GetWorkingArea(pForm).Width - pForm.Width) - 25
         pForm.Top = locTopMax
-        pForm.Show()
+        pForm.ChamaForulario(glfMensagem)
 
         Dim locTop As Double = locTopMax
         Do While pForm.Top > locTopMin

@@ -4,7 +4,7 @@ Imports System.ComponentModel
 imports Microsoft.VisualBasic.Devices
 
 Public Class frmPrincipal
-
+    Const INICIANDO = "H2O Alerta Iniciado.."
     Private glfParametros As clsParametrosIni
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnExibiNotificacao.Click
         ExibeAlerta()
@@ -33,7 +33,12 @@ Public Class frmPrincipal
 
         subExibiParametros(False)
 
-        clsAlerta.subExibiNotificacao(NotifyIcon1, "Água", "Água Alerta Iniciado..")
+        If glfParametros.Estilo = "W" Then
+            clsAlerta.subExibiNotificacao(NotifyIcon1, "Água", INICIANDO)
+        Else
+            clsNotificacaoPersonalizada.subExecutaNotificacaoPersonalizada(glfParametros, INICIANDO)
+        End If
+
 
     End Sub
 

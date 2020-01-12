@@ -22,6 +22,11 @@ H2OAlerta
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
+<member name="M:H2OAlerta.frmNotificacao.ArredondaCantosdoForm">
+ <summary>
+ Arredonda os cantos do Formulario
+ </summary>
+</member>
 <member name="M:H2OAlerta.frmPrincipal.btnSobre_Click(System.Object,System.EventArgs)">
  <summary>
  Versão 1.1 - Adicionado menu de Inicializar com windows
