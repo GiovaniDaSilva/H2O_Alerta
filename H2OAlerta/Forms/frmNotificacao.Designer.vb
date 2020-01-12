@@ -97,6 +97,7 @@ Partial Class frmNotificacao
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmNotificacao"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
+        Me.TopMost = True
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()

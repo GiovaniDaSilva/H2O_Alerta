@@ -7,7 +7,7 @@ Public Class frmNotificacao
 
     Public Sub ChamaForulario(ByVal parMensagem As String)
         Me.Show()
-
+        Me.Activate()
         RichAddLineFmt(textBox, "<b>" & parMensagem & "</b>")
 
     End Sub
