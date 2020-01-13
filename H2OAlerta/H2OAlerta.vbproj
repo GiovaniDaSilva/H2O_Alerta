@@ -160,6 +160,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Agua.wav" />
+    <None Include="bin\Debug\Agua.wav" />
     <Content Include="icon.ico" />
     <Content Include="Icone h2o.ico" />
   </ItemGroup>

@@ -22,6 +22,11 @@ H2OAlerta
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
+<member name="P:H2OAlerta.My.Resources.Resources.Agua">
+<summary>
+  Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+</summary>
+</member>
 <member name="M:H2OAlerta.frmNotificacao.ArredondaCantosdoForm">
  <summary>
  Arredonda os cantos do Formulario
