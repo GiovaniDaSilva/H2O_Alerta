@@ -65,8 +65,8 @@ Public Class frmPrincipal
         If parValor Then
             Me.ShowIcon = True
             Me.ShowInTaskbar = True
-            Me.Show()
             Me.WindowState = FormWindowState.Normal
+            Me.Show()
         Else
             Me.ShowIcon = False
             Me.ShowInTaskbar = False

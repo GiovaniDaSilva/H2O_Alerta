@@ -8,23 +8,23 @@ H2OAlerta
 <members>
 <member name="T:H2OAlerta.My.Resources.Resources">
 <summary>
-  A strongly-typed resource class, for looking up localized strings, etc.
+  Uma classe de recurso de tipo de alta segurança, para pesquisar cadeias de caracteres localizadas etc.
 </summary>
 </member>
 <member name="P:H2OAlerta.My.Resources.Resources.ResourceManager">
 <summary>
-  Returns the cached ResourceManager instance used by this class.
+  Retorna a instância de ResourceManager armazenada em cache usada por essa classe.
 </summary>
 </member>
 <member name="P:H2OAlerta.My.Resources.Resources.Culture">
 <summary>
-  Overrides the current thread's CurrentUICulture property for all
-  resource lookups using this strongly typed resource class.
+  Substitui a propriedade CurrentUICulture do thread atual para todas as
+  pesquisas de recursos que usam essa classe de recurso de tipo de alta segurança.
 </summary>
 </member>
 <member name="P:H2OAlerta.My.Resources.Resources.Agua">
 <summary>
-  Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+  Consulta um recurso localizado do tipo System.IO.UnmanagedMemoryStream semelhante a System.IO.MemoryStream.
 </summary>
 </member>
 <member name="M:H2OAlerta.frmNotificacao.ArredondaCantosdoForm">

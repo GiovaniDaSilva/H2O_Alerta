@@ -1,0 +1,43 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+H2OAlerta
+</name>
+</assembly>
+<members>
+<member name="T:H2OAlerta.My.Resources.Resources">
+<summary>
+  Uma classe de recurso de tipo de alta segurança, para pesquisar cadeias de caracteres localizadas etc.
+</summary>
+</member>
+<member name="P:H2OAlerta.My.Resources.Resources.ResourceManager">
+<summary>
+  Retorna a instância de ResourceManager armazenada em cache usada por essa classe.
+</summary>
+</member>
+<member name="P:H2OAlerta.My.Resources.Resources.Culture">
+<summary>
+  Substitui a propriedade CurrentUICulture do thread atual para todas as
+  pesquisas de recursos que usam essa classe de recurso de tipo de alta segurança.
+</summary>
+</member>
+<member name="P:H2OAlerta.My.Resources.Resources.Agua">
+<summary>
+  Consulta um recurso localizado do tipo System.IO.UnmanagedMemoryStream semelhante a System.IO.MemoryStream.
+</summary>
+</member>
+<member name="M:H2OAlerta.frmNotificacao.ArredondaCantosdoForm">
+ <summary>
+ Arredonda os cantos do Formulario
+ </summary>
+</member>
+<member name="M:H2OAlerta.frmPrincipal.btnSobre_Click(System.Object,System.EventArgs)">
+ <summary>
+ Versão 1.1 - Adicionado menu de Inicializar com windows
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+</members>
+</doc>

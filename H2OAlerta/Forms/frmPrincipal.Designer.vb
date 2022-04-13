@@ -246,6 +246,7 @@ Partial Class frmPrincipal
         Me.Controls.Add(Me.btnExibiNotificacao)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmPrincipal"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "H2O Alerta"
         Me.ContextMenuStrip1.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)
